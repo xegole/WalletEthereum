@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WalletWeSend</string>
+    <string name="title_ethereum_history">Balance History</string>
+    <string name="title_ethereum_balance">Ethereum balance</string>
+    <string name="title_ethereum_qr_code">QRCode</string>
+    <string name="label_ethereum_address">Address: %s</string>
+    <string name="label_ethereum_balance">Balance: %s</string>
+    <string name="label_ethereum_last_update">Date: %s</string>
+
+    <string name="message_error_decoding_ethereum_address">Error Ethereum Address Invalid</string>
+</resources>
