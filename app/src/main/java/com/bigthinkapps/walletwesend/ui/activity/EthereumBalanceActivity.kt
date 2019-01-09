@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.bigthinkapps.walletwesend.R
 import com.bigthinkapps.walletwesend.redux.actions.AddEthereumData
 import com.bigthinkapps.walletwesend.store
@@ -26,10 +27,12 @@ class EthereumBalanceActivity : AppCompatActivity() {
     }
 
     private fun loadUI() {
+        progressBarBalance.visibility = View.VISIBLE
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         title = getString(R.string.title_ethereum_balance)
         viewModel().ethereumLiveData.observe(this, Observer { ethData ->
+            progressBarBalance.visibility = View.GONE
             if (ethData == null) {
                 showSnackError()
             } else {
