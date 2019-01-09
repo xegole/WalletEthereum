@@ -4,10 +4,10 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import android.support.annotation.VisibleForTesting
 import com.bigthinkapps.walletwesend.ui.viewmodel.EthereumBalanceViewModel
 import com.bigthinkapps.walletwesend.ui.viewmodel.HomeViewModel
 
+@Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(private val application: Application) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>) =
@@ -31,11 +31,5 @@ class ViewModelFactory private constructor(private val application: Application)
                     INSTANCE ?: ViewModelFactory(application)
                             .also { INSTANCE = it }
                 }
-
-
-        @VisibleForTesting
-        fun destroyInstance() {
-            INSTANCE = null
-        }
     }
 }
