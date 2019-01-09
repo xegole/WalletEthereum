@@ -12,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -33,6 +34,7 @@ dependencies {
     implementation ('org.web3j:core:3.3.1-android')
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'org.rekotlin:rekotlin:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     kapt 'android.arch.persistence.room:compiler:1.1.1'
